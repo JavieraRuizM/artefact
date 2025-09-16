@@ -1,0 +1,169 @@
+// scss/pages/_artefactos.scss
+
+.artefactos-page {
+    .main-header {
+        text-align: center; // El H1 global es text-align: left, así que esto es un override necesario si quieres el título centrado
+        margin-bottom: 40px; // Espacio después del header en esta página
+        text-align: left; // Alineación del título principal
+        margin-bottom: 60px; // Espacio después del encabezado
+    
+        h1 {
+            font-size: 7em; // Tamaño grande para el título principal
+            font-weight: 500;
+            color: $color-black;
+            line-height: .8; // Interlineado ajustado para títulos grandes
+            margin: 0;
+            letter-spacing: 2px; // Ajuste fino del espaciado entre letras
+    
+            // Ajustes de tamaño para pantallas más pequeñas
+            @media (max-width: $bp-medium) { // ej. <= 768px
+                font-size: 3.5em; // Reducir más para móviles
+                line-height: 1; // Puede necesitar un poco más de aire si el texto se ajusta mucho
+                letter-spacing: 1px;
+            }
+    
+            @media (max-width: 580px) { // Para pantallas muy pequeñas
+                font-size: 2.5em; // Aún más pequeño
+                //letter-spacing: -0.5px;
+                line-height: 1;
+                letter-spacing: 1px;
+                font-weight: 600;
+            }
+    
+            @media (max-width: 370px) { // Para pantallas muy pequeñas
+                font-size: 2em; // Aún más pequeño
+                //letter-spacing: -0.5px;
+                line-height: 1;
+                letter-spacing: 1px;
+                font-weight: 400;
+            }
+        }
+
+        
+        .subtitle { // El subtítulo de esta página sí es diferente
+            font-size: 1.2em; // Ajusta según el diseño de "artefactos.jpg"
+            color: $color-black; // O $color-text-primary si es negro
+            line-height: 1.5;
+            max-width: 850px; // Limita el ancho del subtítulo
+            text-align: left;
+            margin-top: 30px;
+            letter-spacing: normal;
+
+            @media (max-width: 992px) {
+                font-size: 1.1em;
+                max-width: 650px;
+            }
+            @media (max-width: 768px) {
+                font-size: 1em;
+                margin-top: 20px;
+            }
+
+        }
+    }
+
+    // ESTILOS PARA LOS BOTONES DE FILTRO
+    .filtros-artefactos {
+        text-align: center;
+        margin-bottom: 40px;
+
+        .filtro-btn {
+            background-color: #f0f0f0;
+            border: none;
+            color: $color-text-light;
+            padding: 8px 18px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-family: $font-primary;
+            font-size: 0.9em;
+            transition: background-color 0.3s ease, color 0.3s ease;
+
+
+            &:hover {
+                background-color: darken(#f0f0f0, 10%);
+            }
+
+            &.active {
+                background-color: $color-blue;
+                color: $color-white;
+                border-color: $color-blue;
+            }
+
+            @media (max-width: 580px) { // Para pantallas muy pequeñas
+                margin-top: 15px;
+                width: 200px;
+            }
+    
+            @media (max-width: 370px) { // Para pantallas muy pequeñas
+                margin-top: 15px;
+                width: 200px;
+            }
+        }
+
+            
+
+    }
+
+    .artefactos-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        //gap: 30px;
+       padding: 0 20px 20px 20px;
+       // max-width: 1200px;
+        margin-top: 100px;
+        row-gap: 80px;
+
+        .artefacto-item {
+            text-align: left;
+            transition: opacity 0.4s ease, transform 0.4s ease;
+
+            &.hide {
+                display: none;
+            }
+
+            img {
+                display: block;
+                width: auto;
+                height: 200px;
+                //border: 1px solid #eee;
+                margin-bottom: 5px;
+                transition: transform 0.3s ease-in-out;
+                object-fit: contain;
+                margin-left: auto;
+                margin-right: auto;
+                
+
+            }
+
+            .artefacto-nombre {
+                font-size: 1.5em;
+                color: $color-black; // Asegúrate que $color-text-secondary esté definido o usa otra variable
+                margin-top: 20px;
+                font-weight: 700;
+                text-decoration: none;
+                text-align: center;
+                line-height: 1.4em;
+            }
+
+            &:hover {
+                img {
+                    transform: scale(1.08);
+                }
+            }
+        }
+
+        @media (max-width: 1023px) { // Un breakpoint intermedio si es necesario
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+
+        @media (max-width: $bp-medium) { // Usando tu variable $bp-medium
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        }
+    }
+
+    .main-footer.page-footer { // Si necesitas espaciado específico para el footer en esta página
+        padding-top: 60px;
+    }
+
+    
+}

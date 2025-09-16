@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefactos Relacionales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <img src="/assets/hamburguesa.svg" alt="Ícono menú" class="menu-icon-svg menu-icon-hamburger" />
+        <img src="/assets/cerrar.svg" alt="Ícono cerrar menú" class="menu-icon-svg menu-icon-close"
+            style="display: none;" />
+    </button>
+
+    <nav class="menu-panel" id="menuPanel">
+        <ul>
+            <li class="menu-level-1">
+                <a href="index.html">
+                    <img src="assets/home.svg" alt="" class="menu-icon"> HOME
+                </a>
+            </li>
+            <li class="menu-level-1">
+                <a href="artefactos.html">
+                    <img src="assets/artefactos-icon.svg" alt="" class="menu-icon"> ARTEFACTOS
+                </a>
+            </li>
+            <li class="menu-level-1"> <a href="relaciones.html">
+                    <img src="assets/relaciones-icon.svg" alt="" class="menu-icon"> RELACIONES
+                </a>
+            </li>
+
+            <li class="menu-level-1 menu-group-end"> <a href="proyecto.html">
+                    <img src="assets/red2.svg" alt="" class="menu-icon"> SOBRE LA PLATAFORMA
+                </a>
+            </li>
+            <li class="menu-level-2"><a href="plataforma.html">proyectos</a></li>
+            <li class="menu-level-2"><a href="equipo.html">equipo</a></li>
+            <li class="menu-level-2"><a href="workshops.html">workshops y seminarios</a></li>
+            <li class="menu-level-2"> <a href="publicaciones.html">publicaciones</a>
+            <li class="menu-level-2"><a href="exhibiciones.html">exhibiciones</a></li>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/artefactos_relacionales/" target="_blank" class="menu-footer-link">
+            <img src="assets/ig-icon.svg" alt="Instagram" class="menu-icon-footer">
+            artefactosrelacionales
+        </a>
+    </nav>
+
+    <div class="menu-active-background" id="menuActiveBackground"></div>
+
+
+    <div class="container page-container artefactos-page">
+        <header class="main-header">
+            <h1>ARTEFACTOS</h1>
+
+            <p class="subtitle">
+                En el marco de este proyecto proponemos el concepto de artefacto relacional para referirnos a
+                dispositivos diseñados colectivamente como mediaciones sensibles entre actores humanos y
+                más-que-humanos, comunidades, territorios y tecnologías. Los artefactos no solo representan
+                realidades, sino que las co-producen, activando ecologías de saberes y formas colaborativas de imaginar
+                alternativas al modelo extractivista.
+            </p>
+        </header>
+
+        <div class="filtros-artefactos">
+            <button class="filtro-btn active" data-filtro="todos">Todos los Artefactos</button>
+            <button class="filtro-btn" data-filtro="ar">Artefactos Relacionales</button>
+            <button class="filtro-btn" data-filtro="pc">Pluriversos Climáticos</button>
+        </div>
+
+        <section class="artefactos-grid">
+
+            <div class="artefacto-item" data-proyecto="ar pc">
+                <a href="pages-artefactos/geoides.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/globo terraqueo/GLOBO_TERRAQUEO_FT az.png" alt="Geoides Climáticos">
+                </a>
+                <a href="pages-artefactos/maqueta-mauro.html" class="artefacto-nombre-link">
+                    <p class="artefacto-nombre">Geoides Climáticos</p>
+                </a>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/osciloscopio.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/oscilador/oscilador az.png" alt="Oscilador">
+                </a>
+                <a href="pages-artefactos/osciloscopio.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre">Sensor de Oscilaciones</p>
+                </a>
+            </div>
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/maqueta-mauro.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/maqueta mauro/maqueta del mauro 1.png"
+                        alt="Maqueta del relieve del Fundo El Mauro">
+                </a>
+                <a href="pages-artefactos/maqueta-mauro.html" class="artefacto-nombre-link">
+                    <p class="artefacto-nombre">Maqueta del Mauro</p>
+                </a>
+            </div>
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/domus.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/maqueta domus/maqueta del domus az.png" alt="Maqueta Domus">
+                </a>
+                <a href="pages-artefactos/domus.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre"> Paisaje Helicoidal</p>
+                </a>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/sonda-cultural.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/sonda sensorial/sonda sensorial az SI.png" alt="Sonda Cultural">
+                </a>
+                <a href="pages-artefactos/sonda-cultural.html" class="artefacto-nombre-link">
+                    <p class="artefacto-nombre">Maleta Sensorial</p>
+                </a>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/vr2.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/visores vr2/visores vr 2 PRINCIPAL.png" alt="Visores VR 2">
+                </a>
+                <a href="pages-artefactos/vr2.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre">VR Memorias del oikos, Sewell</p>
+                </a>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/vr1.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/visores vr2/visores vr 2 PRINCIPAL.png" alt="Visores VR 1">
+                </a>
+                <a href="pages-artefactos/vr1.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre">VR Futuros especulativos</p>
+                </a>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar pc">
+                <a href="pages-artefactos/pluriversos.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/pluriversos climaticos/plurierso1azul.png" alt="Pluriversos Climáticos">
+                </a>
+                <a href="pages-artefactos/pluriversos.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre">Pluriversos Climáticos</p>
+                </a>
+            </div>
+
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/vr3.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/visores vr2/visores vr 2 PRINCIPAL.png" alt="Visores VR 3">
+                </a>
+                <a href="pages-artefactos/vr3.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre">VR Avatar</p>
+                </a>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <a href="pages-artefactos/grabadora.html" class="artefacto-imagen-link">
+                    <img src="assets/artefactos/grabadora/Tascam azsi.png" alt="Grabadora para registro de Entrevistas">
+                </a>
+                <a href="pages-artefactos/grabadora.html" class="artefacto-imagen-link">
+                    <p class="artefacto-nombre">Grabadora Entrevistas</p>
+                </a>
+            </div>
+
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <img src="assets/artefactos/nadaa.png" alt="Maqueta Cuenca Oceánica">
+                <p class="artefacto-nombre">Maqueta Cuenca Oceánica</p>
+            </div>
+            <div class="artefacto-item" data-proyecto="ar">
+                <img src="assets/artefactos/nadaa.png" alt="Maqueta Terrestre">
+                <p class="artefacto-nombre">Maqueta Terrestre</p>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <img src="assets/artefactos/nadaa.png" alt="Tarjeta Evidencia">
+                <p class="artefacto-nombre">Tarjeta Evidencia</p>
+            </div>
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <img src="assets/artefactos/nadaa.png" alt="Proyector">
+                <p class="artefacto-nombre">Proyector</p>
+            </div>
+
+
+            <div class="artefacto-item" data-proyecto="ar">
+                <img src="assets/artefactos/nadaa.png" alt="Extrusor de arcilla">
+                <p class="artefacto-nombre">Extrusor de Arcilla</p>
+            </div>
+        </section>
+
+        <footer class="main-footer page-footer">
+            <a href="#" id="scrollTopBtn" class="scroll-top-btn">&uarr;</a>
+        </footer>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

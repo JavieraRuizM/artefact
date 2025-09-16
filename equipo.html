@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefactos Relacionales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <img src="/assets/hamburguesa.svg" alt="Ícono menú" class="menu-icon-svg menu-icon-hamburger" />
+        <img src="/assets/cerrar.svg" alt="Ícono cerrar menú" class="menu-icon-svg menu-icon-close"
+            style="display: none;" />
+    </button>
+
+    <nav class="menu-panel" id="menuPanel">
+        <ul>
+            <li class="menu-level-1">
+                <a href="index.html">
+                    <img src="assets/home.svg" alt="" class="menu-icon"> HOME
+                </a>
+            </li>
+            <li class="menu-level-1">
+                <a href="artefactos.html">
+                    <img src="assets/artefactos-icon.svg" alt="" class="menu-icon"> ARTEFACTOS
+                </a>
+            </li>
+            <li class="menu-level-1"> <a href="relaciones.html">
+                    <img src="assets/relaciones-icon.svg" alt="" class="menu-icon"> RELACIONES
+                </a>
+            </li>
+
+            <li class="menu-level-1 menu-group-end"> <a href="proyecto.html">
+                    <img src="assets/red2.svg" alt="" class="menu-icon"> SOBRE LA PLATAFORMA
+                </a>
+            </li>
+            <li class="menu-level-2"><a href="plataforma.html">proyectos</a></li>
+            <li class="menu-level-2"><a href="equipo.html">equipo</a></li>
+            <li class="menu-level-2"><a href="workshops.html">workshops y seminarios</a></li>
+            <li class="menu-level-2"> <a href="publicaciones.html">publicaciones</a>
+            <li class="menu-level-2"><a href="exhibiciones.html">exhibiciones</a></li>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/artefactos_relacionales/" target="_blank" class="menu-footer-link">
+            <img src="assets/ig-icon.svg" alt="Instagram" class="menu-icon-footer">
+            artefactosrelacionales
+        </a>
+    </nav>
+
+    <div class="menu-active-background" id="menuActiveBackground"></div>
+    <div class="container page-container equipo-page">
+        <header class="page-header">
+            <h1>EQUIPO</h1>
+            <p class="page-description">Nuestro equipo se conforma por especialistas en diseño, arquitectura y
+                geografía, enriquecidos con perspectivas de literatura, teoría urbana, psicología comunitaria y
+                prácticas de creación interdisciplinaria. Esta combinación de disciplinas nos permite abordar
+                problemáticas complejas desde múltiples ángulos, explorando nuevas metodologías y enfoques para
+                comprender y transformar los territorios impactados por el extractivismo.</p>
+        </header>
+
+        <section class="team-grid-container">
+            <h2 class="team-section-title">DIRECCIÓN</h2>
+            <div class="team-grid__two-columns direction-grid">
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Alvaro.png" alt="Álvaro Mercado" class="team-card__image">
+                        <img src="assets/equipo/Alvaro2.png" alt="Álvaro Mercado (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Álvaro Mercado</h3>
+                    <p class="team-card__role">Director</p>
+                    <p class="team-card__detalle">Arquitecto</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Álvaro Mercado</h3>
+                        <h4>Arquitecto</h4>
+                        <p class="experiencia">Magíster Ciudad y Territorio, Doctor en Arquitectura y Urbanismo ULB,
+                            Profesor en Escuela de
+                            Arquitectura y Diseño PUCV</p>
+                        <p>Álvaro Mercado es arquitecto y profesor asociado en la Escuela de Arquitectura y Diseño de la
+                            Pontificia Universidad Católica de Valparaíso. Posee un doctorado en Arquitectura y
+                            Urbanismo de la Université Libre de Bruxelles. Sus proyectos de investigación se centran en
+                            explorar prácticas especulativas situadas para rastrear y proyectar transformaciones y
+                            resiliencias en la red de la vida relacionadas con la urbanización extractivista en los
+                            hinterlands locales y regionales de América del Sur.
+                        </p>
+                        <p><em>Álvaro Mercado is an architect and an associate professor at the School of Architecture
+                                and
+                                Design of the Pontificia Universidad Católica de Valparaíso. He holds a PhD in
+                                Architecture
+                                and Urbanism from the Université Libre de Bruxelles. His research projects focus on
+                                exploring situated speculative practices for tracing and futuring transformation and
+                                resiliences in the web of life related to extractivist urbanization in local and
+                                regional
+                                hinterlands of South America.</em></p>
+                        <p class="email">alvaro.mercado@ead.cl</p>
+                    </div>
+                </button>
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Pablo.png" alt="Pablo Mansilla" class="team-card__image">
+                        <img src="assets/equipo/Pablo2.png" alt="Pablo Mansilla (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Pablo Mansilla</h3>
+                    <p class="team-card__role">Co-Director</p>
+                    <p class="team-card__detalle">Geógrafo</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Pablo Mansilla</h3>
+                        <h4>Geógrafo</h4>
+                        <p class="experiencia">Profesor en Instituto de Geografía PUCV</p>
+                        <p>Pablo Mansilla es profesor adjunto del Instituto de Geografía de la Pontificia Universidad
+                            Católica de Valparaíso. Dirige el Grupo Territorios Alternativos
+                            (www.territoriosalternativos.cl), especializado en la intersección entre Geografía Humana,
+                            Geografía Social, Decolonialidad y Planificación Territorial. Posee un Magíster en Geografía
+                            y un Doctorado en Geografía Humana de la Universidad Federal Fluminense, Brasil.
+                            Actualmente, es director del proyecto de investigación interdisciplinario “Clima
+                            Pluriversos” (ATE230072).
+                        </p>
+                        <p><em>Pablo Mansilla is an adjunct professor of the Institute of Geography at the Pontificia
+                                Universidad Católica de Valparaíso. He directs the Alternative Territories Group
+                                www.territoriosalternativos.cl, which specializes in the intersection between Human
+                                Geography, Social Geography, Decoloniality and Territorial Planning. He holds a Master’s
+                                degree in Geography and a PhD in Human Geography from the Universidad Federal
+                                Fluminense, Brazil. He is currently director of the interdisciplinary research project
+                                “Climate Pluriverses” (ATE230072).
+                            </em></p>
+                        <p class="email">pablo.mansilla@pucv.cl</p>
+                    </div>
+                </button>
+            </div>
+
+            <h2 class="team-section-title">INVESTIGADORES</h2>
+            <div class="team-grid__multi-column">
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Daniela.png" alt="Daniela Salgado" class="team-card__image">
+                        <img src="assets/equipo/Daniela2.png" alt="Daniela Salgado (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Daniela Salgado</h3>
+                    <p class="team-card__role">Diseñadora Industrial</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Daniela Salgado</h3>
+                        <h4>Diseñadora Industrial</h4>
+                        <p class="experiencia">Doctora en Arquitectura y Urbanismo ULB, Profesora en Escuela de
+                            Arquitectura y Diseño PUCV</p>
+                        <p>Daniela Salgado es diseñadora industrial y profesora asociada en la Escuela de Arquitectura y
+                            Diseño de la Pontificia Universidad Católica de Valparaíso. Posee un doctorado en
+                            Arquitectura y Urbanismo de la Université Libre de Bruxelles. Su investigación actual se
+                            centra en las artesanías críticas, cuestionando las hegemonías del diseño moderno y
+                            contemporáneo en el contexto chileno, así como las prácticas extractivas que afectan las
+                            artesanías y sus representaciones. Además, ha participado en exposiciones de arte
+                            internacionales, así como en numerosos talleres y seminarios.
+                        </p>
+                        <p><em>Daniela Salgado is an industrial designer and associate professor at the School of
+                                Architecture and Design of the Pontificia Universidad Católica de Valparaíso. She holds
+                                a PhD in Architecture and Urbanism from the Université Libre de Bruxelles. Her current
+                                research focuses on critical crafts, questioning modern and contemporary design
+                                hegemonies in the Chilean context, and extractive practices impacting crafts and their
+                                representations. She has also participated in international art exhibitions, and
+                                numerous workshops and seminars.
+                            </em></p>
+                        <p class="email">dsalgado@ead.cl</p>
+                    </div>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Adriana.png" alt="Adriana Marin" class="team-card__image">
+                        <img src="assets/equipo/Adriana2.png" alt="Adriana Marin (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Adriana Marín</h3>
+                    <p class="team-card__role">Socióloga</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Adriana Marín</h3>
+                        <h4>Socióloga</h4>
+                        <p class="experiencia">Doctora en Arquitectura y Urbanismo USP, Profesora en Escuela de
+                            Arquitectura y Diseño PUCV</p>
+                        <p>Adriana Marín es socióloga y profesora asociada en la Escuela de Arquitectura y Diseño de la
+                            Pontificia Universidad Católica de Valparaíso. Posee un doctorado en Arquitectura y
+                            Urbanismo de la Universidad de São Paulo, Brasil. Es miembro del Grupo de Investigación en
+                            Vivienda y Arriendo de la Pontificia Universidad Católica de Chile, un equipo
+                            interdisciplinario que estudia los mercados, prácticas y morfologías relacionadas con el
+                            crecimiento de la vivienda en arriendo en Chile y América Latina.
+                        </p>
+                        <p><em>Adriana Marín is a sociologist and currently an associate professor at the School of
+                                Architecture and Design at the Pontificia Universidad Católica de Valparaíso. She holds
+                                a PhD in Architecture and Urbanism from the University of São Paulo, Brazil. She is a
+                                member of the Housing and Rental Research Group at the Pontificia Universidad Católica
+                                de Chile, an interdisciplinary team that studies markets, practices, and morphologies
+                                related to the growth of rental housing in Chile and Latin America.
+                            </em></p>
+                        <p class="email">amarin@ead.cl </p>
+                    </div>
+                </button>
+
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Javiera.png" alt="Javiera Pavez" class="team-card__image">
+                        <img src="assets/equipo/Javiera2.png" alt="Javiera Pavez (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Javiera Pavez</h3>
+                    <p class="team-card__role">Psicóloga</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Javiera Pavez</h3>
+                        <h4>Psicóloga</h4>
+                        <p class="experiencia">Profesora Escuela de Psicología PUCV</p>
+                        <p>Javiera Pavez es psicóloga comunitaria, doctora en Psicología y profesora en la Escuela de
+                            Psicología de la Pontificia Universidad Católica de Valparaíso. Su investigación se centra
+                            en la participación de organizaciones comunitarias y sus ensamblajes territoriales,
+                            abordándolos mediante métodos etnográficos y participativos.
+                        </p>
+                        <p><em>Javiera Pavez is a community psychologist, PhD in psychology and professor at the School
+                                of Psychology of the Pontificia Universidad Católica de Valparaíso. Her research focuses
+                                on the participation of community based organizations and their territorial assemblages,
+                                which she approaches through ethnographic and participative methods.
+                            </em></p>
+                        <p class="email">javiera.pavez@pucv.cl</p>
+                    </div>
+                </button>
+
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Maxwell.png" alt="Maxwell Woods" class="team-card__image">
+                        <img src="assets/equipo/Maxwell2.png" alt="Maxwell Woods (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Maxwell Woods</h3>
+                    <p class="team-card__role">Doctor en Literatura</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Maxwell Woods</h3>
+                        <p class="experiencia">Doctor en literatura comparada University of Wisconsin, Profesor en
+                            Facultad de Artes Liberales UAI
+                        </p>
+                        <p>Maxwell Woods es profesor asistente en el Departamento de Literatura de la Universidad Adolfo
+                            Ibáñez en Viña del Mar. Su trabajo se dedica a la interrelación entre los estudios
+                            literarios urbanos, las humanidades ambientales y los estudios de movimientos sociales.
+                            Actualmente, es investigador principal del proyecto FONDECYT de Iniciación 11220089,
+                            “Urbanismos Míticos: Mito y la Descolonización de las Ciudades,” financiado por ANID.
+                        </p>
+                        <p><em>Maxwell Woods is assistant professor in the Department of Literature at Universidad
+                                Adolfo Ibáñez in Viña del Mar. His work is dedicated to the interrelationship between
+                                literary urban studies, environmental humanities, and social movement studies.
+                                Currently, Woods is the principal investigator of the FONDECYT Initiation project
+                                11220089, “Mythical Urbanisms: Myth and the Decolonization of Cities,” funded by ANID.
+                            </em></p>
+                        <p class="email">maxwell.woods@uai.cl</p>
+                    </div>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Leonardo.png" alt="Leonardo Aravena" class="team-card__image">
+                        <img src="assets/equipo/Leonardo2.png" alt="Leonardo Aravena (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Leonardo Aravena</h3>
+                    <p class="team-card__role">Diseñador Industrial</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Leonardo Aravena</h3>
+                        <h4>Diseñador Industrial</h4>
+                        <p class="experiencia">Magíster Náutico y Marítimo, Profesor Escuela de Arquitectura y Diseño
+                            PUCV
+                        </p>
+                        <p>Leonardo Aravena es diseñador industrial y profesor en la Escuela de Arquitectura y Diseño de
+                            la Pontificia Universidad Católica de Valparaíso. Máster en Arquitectura y Diseño de la
+                            PUCV, es coordinador del laboratorio de fabricación digital MADLAB, donde colabora en
+                            diversos proyectos mediante la experimentación material en la intersección de técnicas de
+                            fabricación analógicas y digitales.
+                        </p>
+                        <p><em>Leonardo Aravena is an industrial designer and professor at the School of Architecture
+                                and Design of the Pontificia Universidad Católica de Valparaíso, Master in Architecture
+                                and Design of the PUCV, he is the coordinator of the MADLAB digital fabrication
+                                laboratory, working in collaboration with different projects through material
+                                experimentation at the crossroads of analogue and digital fabrication techniques.
+                            </em></p>
+                        <p class="email">leonardo.aravena@ead.cl</p>
+                    </div>
+                </button>
+
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Michele.png" alt="Michèle Wilkomirsky" class="team-card__image">
+                        <img src="assets/equipo/Michele2.png" alt="Michèle Wilkomirsky (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Michèle Wilkomirsky</h3>
+                    <p class="team-card__role">Diseñadora Gráfica</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Michèle Wilkomirsky</h3>
+                        <h4>Diseñadora Gráfica</h4>
+                        <p class="experiencia">Doctora en Turismo URJC, Profesora en Escuela de Arquitectura y Diseño
+                            PUCV
+                        </p>
+                        <p>Michèle Wilkomirsky es diseñadora gráfica de la PUCV y doctora en Turismo por la Universidad
+                            Rey Juan Carlos (URJC), Madrid, España. Es profesora de diseño en la Escuela de Arquitectura
+                            y Diseño de la Pontificia Universidad Católica de Valparaíso. En el programa de pregrado en
+                            Diseño, imparte los talleres de Observación, Fundamentos y Forma, así como el taller Ciudad
+                            Legible en el ciclo de oficios. Además, dicta clases sobre Diseño y cultura contemporánea y
+                            supervisa proyectos de titulación en Diseño con mención en Diseño Gráfico y Diseño de
+                            Interacción.
+                        </p>
+                        <p><em>Michèle Wilkomirsky is a graphic designer PUCV, PhD in Tourism from the URJC, Madrid,
+                                Spain. Professor of design at the School of Architecture and Design PUCV. In the Design
+                                undergraduate program, she teaches the studios Observation, Foundation and Form and the
+                                studio Legible City in the first cycle. In addition, she lectures on Design and
+                                contemporary culture. She supervises degree projects in Design with mention in Graphic
+                                Design and Interaction Design.
+                            </em></p>
+                        <p class="email">wilkomirsky@ead.cl </p>
+                    </div>
+                </button>
+
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Felipe.png" alt="Felipe Muñoz" class="team-card__image">
+                        <img src="assets/equipo/Felipe2.png" alt="Felipe Muñoz (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Felipe Muñoz</h3>
+                    <p class="team-card__role">Ingeniero Civil</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Felipe Muñoz</h3>
+                        <h4>Ingeniero Civil</h4>
+                        <p class="experiencia">Doctor en ingeniería Civil PUCatalonia, Profesor en Escuela de Ingenería
+                            Civil
+                        </p>
+                        <p>Felipe Muñoz es Doctor en Ingenería Civil. Su investigación se centra en uso de tecnologías
+                            en la industria de la Arquitectura, Ingeniería y Construcción (AIC), basado en la generación
+                            de metodologías y desarrollos para esta industria, como respuesta a la revolución
+                            tecnológica del rubro. Actualmente se centra en el Building Information Modeling (BIM) y AEC
+                            Technologies aplicadas a proyectos de edificación durante todo su ciclo de vida y a la
+                            gestión de proyectos con modelación nD.
+                        </p>
+                        <p><em>Felipe Muñoz holds a PhD in Civil Engineering. His research focuses on the use of
+                                technologies in the Architecture, Engineering, and Construction (AEC) industry,
+                                emphasizing the development of methodologies and innovations in response to the
+                                technological revolution in the field. Currently, his work centers on Building
+                                Information Modeling (BIM) and AEC technologies applied to building projects throughout
+                                their lifecycle, as well as project management with nD modeling.
+                            </em></p>
+                        <p class="email">felipe.munoz@pucv.cl</p>
+                    </div>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/Mia.png" alt="Mía-Sue Carrère" class="team-card__image">
+                        <img src="assets/equipo/Mia2.png" alt="Mía-Sue Carrère(Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Mía-Sue Carrère</h3>
+                    <p class="team-card__role">Arquitecta</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Mía-Sue Carrère</h3>
+                        <h4>Arquitecta</h4>
+                        <p class="experiencia">Magíster Académico Arquitectura y Diseño, Profesora en Escuela de
+                            Arquitectura y Diseño PUCV
+                        </p>
+                        <p>Mía-Sue Carrère es arquitecta chilena, titulada en 2021. Obtuvo su Máster en Arquitectura y
+                            Diseño en 2024, con un enfoque en la urbanización extractiva. Actualmente, es profesora
+                            asistente en la Escuela de Arquitectura y Diseño de la Pontificia Universidad Católica de
+                            Valparaíso (EAD-PUCV). Sus proyectos combinan investigación arquitectónica, visualización de
+                            datos y representación artística, utilizando plataformas audiovisuales para abordar
+                            conflictos territoriales y la urbanización extractiva en Chile.
+                        </p>
+                        <p><em>Mía-Sue Carrère is a Chilean architect who graduated in 2021. She earned her Master’s in
+                                Architecture and Design in 2024, focusing on extractive urbanization. Currently, she is
+                                an assistant professor at the EAD-PUCV. Her projects combine architectural research,
+                                data visualization, and artistic representation, utilizing audiovisual platforms to
+                                address territorial conflicts and extractive urbanization in Chile.
+                            </em></p>
+                    </div>
+                </button>
+
+            </div>
+            <h2 class="team-section-title">INVESTIGADORES INTERNACIONALES</h2>
+            <div class="team-grid__multi-column">
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/m1.png" alt="Marco Ranzato" class="team-card__image">
+                        <img src="assets/equipo/m2.png" alt="Marco Ranzato (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Marco Ranzato</h3>
+                    <p class="team-card__role">Arquitecto Urbanista</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Marco Ranzato</h3>
+                        <h4>Arquitecto Urbanista</h4>
+                        <p class="experiencia">Doctor en Ingeniería Ambiental Università Roma Tre
+                        </p>
+                        <p>Marco Ranzato es arquitecto-urbanista IUAV Venecia y doctor en Ingeniería Ambiental U. de
+                            Trento. Actualmente es investigador y docente en el Departamento de Arquitectura de la
+                            Universidad Roma Tre. Entre 2013 y 2020, desarrolló actividades de investigación en la ULB
+                            (Bélgica), donde entre 2016 y 2020 fue coordinador científico del Urban Lab Metrolab
+                            Brussels. Ha sido investigador visitante y cofundador y codirector del colectivo Latitude
+                            Platform for Urban Research and Design
+                        </p>
+                        <p><em>Marco Ranzato is an architect-urbanist IUAV Venice, and holds a PhD in Environmental
+                                Engineering U. of Trento. He is currently a researcher and lecturer at the Department of
+                                Architecture at Roma Tre University. Between 2013 and 2020, he conducted research at the
+                                ULB (Belgium), where he served as a scientific coordinator of the Urban Lab Metrolab
+                                Brussels (2016-2020). He has been a visiting scholar and he is also the co-founder and
+                                co-director of the collective Latitude Platform for Urban Research and Design
+                            </em></p>
+                        <p class="email">marco.ranzato@uniroma3.it</p>
+                    </div>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/geofrey.png" alt="Geoffrey Grulois" class="team-card__image">
+                        <img src="assets/equipo/geofrey2.png" alt="Geoffrey Grulois (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Geoffrey Grulois</h3>
+                    <p class="team-card__role">Arquitecto Urbanista</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Geoffrey Grulois</h3>
+                        <h4>Arquitecto Urbanista</h4>
+                        <p class="experiencia">Doctor en Arquitectura y Urbanismo Université libre de Bruxelles
+                        </p>
+                        <p>Geoffrey Grulois es profesor de Urbanismo y coordinador de LoUIsE – Laboratorio de Paisaje,
+                            Urbanismo, Infraestructura y Ecologías en la Facultad de Arquitectura de la Université libre
+                            de Bruxelles (ULB). Es Máster por la Universidad de Tokio y Doctor en Urbanismo por la
+                            Université libre de Bruxelles. Su enseñanza e investigación actuales se centran en el
+                            urbanismo de transición, explorando la intersección entre metabolismo, ecología y movilidad
+                            sostenible. Actualmente, es co-coordinador del laboratorio transdisciplinario
+                            Metrolab.Brussels para la investigación crítica en urbanismo y coordinador académico del
+                            Máster Avanzado en Urbanismo de Transición de la ULB
+                        </p>
+                        <p><em>Geoffrey Grulois is professor of Urbanism and coordinator of LoUIsE – Laboratory on
+                                Landscape, Urbanism, Infrastructure and Ecologies at the Faculty of Architecture ULB. He
+                                graduated as a Master from the University of Tokyo and as a PhD in urbanism from the
+                                Université libre de Bruxelles. His current teaching and research explore transition
+                                urbanism at the intersection of metabolism, ecology and sustainable mobility. He is
+                                currently a co-coordinator of Metrolab.Brussels transdisciplinary laboratory for
+                                critical urban research and the academic coordinator of the Avanced Master in transition
+                                urbanism of ULB.
+                            </em></p>
+                        <p class="email">Geoffrey.grulois@ulb.be</p>
+                    </div>
+                </button>
+
+
+            </div>
+
+
+
+            <h2 class="team-section-title">INVESTIGADORES TÉCNICO-PROFESIONALES</h2>
+            <div class="team-grid__multi-column">
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/ur.png" alt="Ur Barlow" class="team-card__image">
+                        <img src="assets/equipo/ur2.png" alt="Ur Barlow (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Ur Barlow</h3>
+                    <p class="team-card__role">Diseñador Industrial</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Ur Barlow</h3>
+                        <h4>Diseñador Industrial</h4>
+                        <p class="experiencia">Diseñador de espacios virtuales
+                        </p>
+                        <p>Ur Barlow Conejeros es Diseñador Industrial titulado de la Pontificia Universidad Católica de
+                            Valparaíso, con especialización en modelado 3D para escenarios virtuales y en el uso de
+                            herramientas de Fabricación Digital para prototipos. Dicta cursos de modelado 3d para
+                            artistas y diseñadores y es fundador de Ur3d Studios.
+                        </p>
+                        <p><em>Ur Barlow Conejeros is an Industrial Designer graduated from the Pontificia Universidad
+                                Católica de Valparaíso, specializing in 3D modeling for virtual environments and the use
+                                of Digital Fabrication tools for prototyping. He teaches 3D modeling courses for artists
+                                and designers and is the founder of Ur3d Studios.
+                            </em></p>
+                    </div>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/andres.jpeg" alt="Andrés Aliaga" class="team-card__image">
+                        <img src="assets/equipo/andres.jpeg" alt="Andrés Aliaga (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Andrés Aliaga</h3>
+                    <p class="team-card__role">Diseñador</p>
+
+                </button>
+
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/franz.png" alt="Franz Schreiber" class="team-card__image">
+                        <img src="assets/equipo/franz2.png" alt="Franz Schreiber (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Franz Schreiber</h3>
+                    <p class="team-card__role">Geógrafo</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Franz Schreiber</h3>
+                        <h4>Geógrafo</h4>
+                        <p class="experiencia">​​Geógrafo en Observatorio Regional de Desarrollo Urbano Sostenible
+                            (ORUS)
+                        </p>
+                        <p>Franz Schreiber se especializa en análisis y gestión territorial con uso de Sistemas de
+                            Información Geográfica (SIG) y posee experiencia en estudios territoriales, manejo de datos
+                            geoespaciales y validación cartográfica.
+                        </p>
+                        <p><em>Franz Schreiber specializes in territorial analysis and management using Geographic
+                                Information Systems (GIS). He has experience in territorial studies, geospatial data
+                                management, and cartographic validation.
+                            </em></p>
+                        <p class="email">franz.schreiber@ead.cl</p>
+                    </div>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/javieraruiz.png" alt="Javiera Ruiz" class="team-card__image">
+                        <img src="assets/equipo/javieraruiz2.png" alt="Javiera Ruiz (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Javiera Ruiz</h3>
+                    <p class="team-card__role">Diseñadora de Interacción</p>
+                    <div class="team-card__bio-content" hidden>
+                        <h3>Javiera Ruiz</h3>
+                        <h4>Diseñadora de Interacción</h4>
+
+                        <p>Diseñadora de Interacción con diplomado en Diseño de Experiencia de Usuario para Productos
+                            Digitales. Actualmente desempeñando rol de profesora agregada en la Escuela de Arquitectura
+                            y
+                            Diseño PUCV, en el Taller de Diseño de Servicios y la asignatura Imagen Escrita. Experiencia
+                            en
+                            diseño de productos digitales y desarrollo front-end, con foco en la creación de interfaces
+                            web
+                            y aplicaciones. Mis intereses se orientan hacia el creative coding y las artes mediales,
+                            explorando la intersección entre diseño y tecnología a través de experiencias digitales
+                            interactivas.
+                        </p>
+                        <p><em>Interaction Designer with a diploma in User Experience Design for Digital Products.
+                                Currently
+                                serving as an adjunct professor at the School of Architecture and Design, PUCV, teaching
+                                the
+                                Service Design Studio and the Written Image course. Experienced in digital product
+                                design
+                                and front-end development, with a focus on creating web interfaces and applications. My
+                                interests lie in creative coding and media arts, exploring the intersection of design
+                                and
+                                technology through interactive digital experiences.
+                            </em></p>
+                        <p class="email">jruiz@ead.cl</p>
+                    </div>
+                </button>
+
+            </div>
+
+            <h2 class="team-section-title">ESTUDIANTES</h2>
+            <div class="team-grid__multi-column">
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/carla.jpeg" alt="Carla Saavedra" class="team-card__image">
+                        <img src="assets/equipo/carla.jpeg" alt="Carla Saavedra (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Carla Saavedra</h3>
+                    <p class="team-card__role">Arquitecta</p>
+                    <p class="team-card__detalle">Estudiante de magíster MAD-PUCV</p>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/jose.jpg" alt="Jose Tapia" class="team-card__image">
+                        <img src="assets/equipo/jose.jpg" alt="Jose Tapia (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">José Tapia</h3>
+                    <p class="team-card__role">Arquitecto</p>
+                    <p class="team-card__detalle">Estudiante de magíster MAD-PUCV</p>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/yamil.png" alt="yamil jadue" class="team-card__image">
+                        <img src="assets/equipo/yamil.png" alt="yamil jadue (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Yamil Jadue</h3>
+                    <p class="team-card__role">Estudiante de Arquitectura</p>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/IV.png" alt="iv" class="team-card__image">
+                        <img src="assets/equipo/IV.png" alt="iv (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Ismael Valdés</h3>
+                    <p class="team-card__role">Estudiante de Arquitectura</p>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/BM.png" alt="iv" class="team-card__image">
+                        <img src="assets/equipo/bm.png" alt="iv (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Bastián Muñoz</h3>
+                    <p class="team-card__role">Estudiante de Arquitectura</p>
+                </button>
+
+                <button class="team-card">
+                    <div class="team-card__image-wrapper">
+                        <img src="assets/equipo/sofia.png" alt="sofia" class="team-card__image">
+                        <img src="assets/equipo/sofia.png" alt="sofia (Hover)"
+                            class="team-card__image team-card__image--hover">
+                    </div>
+                    <h3 class="team-card__name">Sofía Montecinos</h3>
+                    <p class="team-card__role">Estudiante de Ingeniería Civil</p>
+                </button>
+
+            </div>
+
+
+        </section>
+    </div>
+
+    <div class="team-modal" id="teamModal">
+        <div class="team-modal__overlay" id="teamModalOverlay"></div>
+        <div class="team-modal__content">
+            <button class="team-modal__close-btn" id="teamModalCloseBtn"><img src="assets/cerrar.svg"
+                    alt="Cerrar"></button>
+            <div class="team-modal__bio">
+            </div>
+        </div>
+    </div>
+
+    <footer class="main-footer page-footer">
+        <a href="#" id="scrollTopBtn" class="scroll-top-btn">&uarr;</a>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/equipo.js"></script>
+</body>
+
+</html>

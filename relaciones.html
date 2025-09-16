@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefactos Relacionales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <img src="/assets/hamburguesa.svg" alt="Ícono menú" class="menu-icon-svg menu-icon-hamburger" />
+        <img src="/assets/cerrar.svg" alt="Ícono cerrar menú" class="menu-icon-svg menu-icon-close"
+            style="display: none;" />
+    </button>
+
+    <nav class="menu-panel" id="menuPanel">
+        <ul>
+            <li class="menu-level-1">
+                <a href="index.html">
+                    <img src="assets/home.svg" alt="" class="menu-icon"> HOME
+                </a>
+            </li>
+            <li class="menu-level-1">
+                <a href="artefactos.html">
+                    <img src="assets/artefactos-icon.svg" alt="" class="menu-icon"> ARTEFACTOS
+                </a>
+            </li>
+            <li class="menu-level-1"> <a href="relaciones.html">
+                    <img src="assets/relaciones-icon.svg" alt="" class="menu-icon"> RELACIONES
+                </a>
+            </li>
+
+            <li class="menu-level-1 menu-group-end"> <a href="proyecto.html">
+                    <img src="assets/red2.svg" alt="" class="menu-icon"> SOBRE LA PLATAFORMA
+                </a>
+            </li>
+            <li class="menu-level-2"><a href="plataforma.html">proyectos</a></li>
+            <li class="menu-level-2"><a href="equipo.html">equipo</a></li>
+            <li class="menu-level-2"><a href="workshops.html">workshops y seminarios</a></li>
+            <li class="menu-level-2"> <a href="publicaciones.html">publicaciones</a>
+            <li class="menu-level-2"><a href="exhibiciones.html">exhibiciones</a></li>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/artefactos_relacionales/" target="_blank" class="menu-footer-link">
+            <img src="assets/ig-icon.svg" alt="Instagram" class="menu-icon-footer">
+            artefactosrelacionales
+        </a>
+    </nav>
+
+    <div class="menu-active-background" id="menuActiveBackground">
+
+    </div>
+
+
+    <div class="relations-page-container view-a-active" id="relationsContainer">
+
+        <div class="view-switch-container">
+            <input type="checkbox" id="viewSwitch" class="view-switch-toggle">
+            <label for="viewSwitch" class="view-switch-label">
+                <span class="label-a">Presente</span>
+                <span class="switch"></span>
+                <span class="label-b">Pasado</span>
+            </label>
+        </div>
+
+        <!-- scroll presente -->
+        <div class="view-wrapper view-a">
+            <div class="scroll-content" id="scrollA">
+                <img src="assets/relaciones/Junio.png" alt="Ilustración del Territorio" class="background-image">
+
+
+                <div class="hotspots-container">
+
+                    <!-- Nomades Industriales del Mar -->
+                    <button class="hotspot" style="top: 55%; left: 7.5vh; --scale: 6.45;"
+                        data-title="Nómades Industriales del Mar" data-img="assets/relaciones/hito-barco-detalle.jpg"
+                        data-text="Los Nómades Industriales del Mar (NIM) son un grupo de hombres entre
+                        25 y 60 años quienes navegan en el paisaje marino. Sus faenas se orientan al transporte de
+                        constructores y al remolque de infraestructura pesada para la construcción de
+                        la desalinizadora instalada por Minera Los Pelambres en la Bahía del Puerto
+                        Punta Chungo, Los Vilos, región de Coquimbo. Los NIM, originarios de la
+                        ciudad de Valparaíso, se han visto atraídos por la nueva of*erta
+                        laboral en medio del boom de la desalinización, fenómeno que responde a la creciente
+                        crisis hídrica en Chile. Los NIM experimentan de primera fuente las fricciones
+                        ecopolíticas y las transformaciones que están ocurriendo en las dinámicas extractivas
+                        actuales en el maritorio.">
+                        <img src="assets/relaciones/Recurso 4.png" alt="Hito: Nómades del Mar">
+                    </button>
+                    <button class="hotspot" style="top: 60%; left: 25%; --scale: 0.8;" data-title="Hito Pequeño"
+                        data-img="assets/relaciones/otro-hito.png"
+                        data-text="Este hito tiene una escala inicial más pequeña.">
+                        <img src="assets/relaciones/otro-hito.png" alt="Hito Pequeño">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- scroll pasado -->
+        <div class="view-wrapper view-b">
+            <div class="scroll-content" id="scrollB">
+                <img src="assets/relaciones/corte-alternativo.jpg" alt="Ilustración Alternativa"
+                    class="background-image">
+                <div class="hotspots-container">
+                    <button class="hotspot" style="top: 75%; left: 15%; --scale: 1;" data-title="Otro Hito"
+                        data-video="assets/relaciones/video.mp4"
+                        data-text="Descripción para este otro hito en la segunda vista.">
+                        <img src="assets/relaciones/otro-hito.png" alt="Hito Alternativo">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- modal -->
+    <div class="relations-modal" id="relationsModal">
+        <div class="relations-modal__content">
+            <button class="relations-modal__close-btn" id="relationsModalCloseBtn"><img src="assets/cerrar.svg"
+                    alt="Cerrar"></button>
+            <div class="relations-modal__body">
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/relaciones.js"></script>
+</body>
+
+</html>

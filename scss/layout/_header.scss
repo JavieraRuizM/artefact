@@ -1,0 +1,63 @@
+// scss/layout/_header.scss
+
+.main-header {
+    text-align: left; // Alineación del título principal
+    margin-bottom: 60px; // Espacio después del encabezado
+
+    @media (max-width: $bp-large) {
+        margin:20px;
+    }
+    @media (max-width: $bp-medium) {
+        margin: auto;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 7.1em; // Tamaño grande para el título principal
+        font-weight: 500;
+        color: $color-black;
+        line-height: 1em; // Interlineado ajustado para títulos grandes
+        margin: 0;
+        letter-spacing: 2px; // Ajuste fino del espaciado entre letras
+
+
+
+        @media (max-width: $bp-medium) { // ej. <= 768px
+            font-size: 3.5em; // Reducir más para móviles
+            line-height: 1; // Puede necesitar un poco más de aire si el texto se ajusta mucho
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 580px) { // Para pantallas muy pequeñas
+            font-size: 2em; // Aún más pequeño
+            //letter-spacing: -0.5px;
+            line-height: 1;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+
+    }
+
+    .subtitle {
+        font-size: 2.2em;
+        font-weight: 400;
+        line-height: 1.1em;
+        color: $color-blue; // Color azul para el subtítulo
+        margin-top: 15px;
+        letter-spacing: 1.2px;
+        max-width: 800px;
+
+        // MEDIA QUERIES PARA AJUSTAR EL TAMAÑO DEL SUBTÍTULO
+
+        @media (max-width: $bp-medium) {
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 480px) {
+            font-size: 0.9em;
+            font-weight: 400;
+        }
+    }
+}

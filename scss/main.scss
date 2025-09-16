@@ -1,0 +1,26 @@
+// 1. Abstracts (Variables, etc.)
+@import 'abstracts/variables';
+
+// 2. Base Styles (Reset -si lo usas-, Typography, Body globals)
+// @import 'base/reset'; // Si decides usar un reset CSS
+@import 'base/typography';
+@import 'base/base';
+
+// 3. Layout (Estructura general de la página: Container, Header, Footer, Sections)
+@import 'layout/container';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/sections';
+
+// 4. Components (Elementos reutilizables y específicos: Buttons, Navigation, Cards)
+@import 'components/buttons';
+@import 'components/navigation'; // Contiene todo lo del menú
+@import 'components/cards';       // Contiene estilos de tarjetas y el fullscreen-gif-background
+
+// 5. Responsive adjustments (Si tienes media queries globales no anidadas, irían aquí)
+// La mayoría de los ajustes responsivos están anidados dentro de sus componentes/layouts respectivos.
+@import 'pages/proyecto.scss';
+@import 'pages/artefactos';
+@import 'pages/detalle-artefacto';
+@import 'pages/equipo';
+@import 'pages/relaciones';

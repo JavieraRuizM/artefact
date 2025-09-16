@@ -1,0 +1,24 @@
+// scss/base/_base.scss
+
+html {
+    box-sizing: border-box; // Modelo de caja más intuitivo
+    scroll-behavior: smooth; // Para el scroll suave del botón "ir arriba"
+    overflow-x: hidden; 
+}
+
+*, *::before, *::after {
+    box-sizing: inherit; // Heredar box-sizing
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $bg-body;
+    position: relative; // Necesario para algunos posicionamientos fijos/absolutos
+    overflow-x: hidden;
+
+   &.menu-open {
+        // Estilos cuando el menú está abierto (manejados en _navigation.scss)
+        overflow: hidden;
+    }
+}

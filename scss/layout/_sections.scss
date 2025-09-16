@@ -1,0 +1,79 @@
+.components-section {
+    display: flex;
+    justify-content: space-between; // Espacio entre las tarjetas principales
+    gap: 60px; // Espacio entre tarjetas
+    width: 66.666vw; // 2/3 del ancho del viewport
+    max-width: 1100px;
+    margin-bottom: 70px; // Espacio después de esta sección
+
+    @media (max-width: $bp-large) { // ej. <= 992px
+        width: 85vw; // Ocupa más del viewport
+        gap: 30px;
+        // flex-direction: row; // Mantener en fila si aún caben dos
+    }
+
+    @media (max-width: $bp-medium) { // ej. <= 768px
+        flex-direction: column;    // Apilar las tarjetas
+        align-items: stretch;      // Las tarjetas ocupan todo el ancho disponible de la sección
+        width: 90vw;               // Que la sección ocupe casi todo el viewport en móviles
+        // gap: 30px; // El gap vertical se controlará por el margen de las tarjetas o un gap de grid si cambias a grid
+        margin-bottom: 50px;
+    }
+
+    @media (max-width: 480px) { // Pantallas muy pequeñas
+        width: 100%; // Casi todo el ancho
+        gap: 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+// scss/layout/_sections.scss
+
+// ... (Estilos para .components-section, si los tienes aquí) ...
+
+.exploration-section {
+    text-align: left; // Título "EXPLORACIÓN" a la izquierda
+    margin-top: 100px;
+    margin-bottom: 20px; // Espacio después de toda la sección de exploración
+
+    h2 {
+        font-size: 2em;
+        font-weight: 700;
+        color: $color-blue; // Título en azul
+        margin-bottom: 40px; // Espacio debajo del título "EXPLORACIÓN"
+        text-transform: uppercase;
+        text-decoration: underline;
+    }
+}
+
+.exploration-grid { // ESTE ES EL CONTENEDOR DEL GRID PARA LAS EXPLORATION-CARDS
+    display: grid;
+    gap: 30px; // Espacio entre las tarjetas
+    row-gap: 75px;
+
+    // Estado base (Escritorios grandes - 3 columnas)
+    grid-template-columns: repeat(3, 1fr); // Fuerza 3 columnas de igual tamaño
+
+    // Para tablets o pantallas medianas (ej. entre $bp-medium y $bp-large): 2 columnas
+    @media (max-width: $bp-large) { // ej. <= 992px (asegúrate que $bp-large esté definido en _variables.scss)
+        grid-template-columns: repeat(2, 1fr); // 2 columnas
+        gap: 25px;
+    }
+
+    // Para móviles (menor o igual a $bp-medium): 1 columna
+    @media (max-width: $bp-medium) { // ej. <= 768px (asegúrate que $bp-medium esté definido en _variables.scss)
+        grid-template-columns: 1fr; // 1 columna
+        gap: 20px; // Ajusta el gap para móviles si es necesario
+    }
+}
+
+// ... (Estilos para .placeholder-section, etc.) ...
+
+// Estilo para secciones de placeholder (ej. "Sobre el proyecto", "Equipo")
+.placeholder-section {
+    padding: 50px 20px;
+    text-align: center;
+    color: #777;
+    border-top: 1px dashed #ddd;
+}

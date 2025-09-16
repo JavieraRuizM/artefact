@@ -1,0 +1,27 @@
+// scss/base/_typography.scss
+
+body {
+    font-family: $font-primary;
+    color: $color-text-primary;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0; // Quitar margen superior por defecto
+    font-weight: 700; // Un peso bold para DM Sans es buena base
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1em; // Espaciado base para párrafos
+}
+
+a {
+    color: $color-blue; // Color de enlace por defecto
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline; // Subrayado al hacer hover
+    }
+}

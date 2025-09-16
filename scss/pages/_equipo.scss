@@ -1,0 +1,304 @@
+// scss/pages/_equipo.scss
+
+.equipo-page {
+    .page-header {
+        text-align: left;
+        margin-bottom: 80px;
+
+        h1 {
+            font-size: 7em; // Tamaño grande para el título principal
+            font-weight: 500;
+            color: $color-black;
+            line-height: .8; // Interlineado ajustado para títulos grandes
+            margin: 0;
+            letter-spacing: 2px; // Ajuste fino del espaciado entre letras
+            text-transform: uppercase;
+
+            @media (max-width: 992px) { // Tablets
+                font-size: 5em;
+            }
+            @media (max-width: 768px) { // Móviles
+                font-size: 3.5em;
+                line-height: 1;
+            }
+        }
+
+
+        .page-description {
+            font-size: 1.2em; // Ajusta según el diseño de "artefactos.jpg"
+            color: $color-black; // O $color-text-primary si es negro
+            line-height: 1.5;
+            max-width: 850px; // Limita el ancho del subtítulo
+            text-align: left;
+            margin-top: 30px;
+
+            @media (max-width: 992px) {
+                font-size: 1.1em;
+                max-width: 650px;
+            }
+            @media (max-width: 768px) {
+                font-size: 1em;
+                margin-top: 20px;
+            }
+        }
+    }
+
+    .team-grid-container {
+        max-width: 1200px;
+        margin: 0 0;
+        //padding: 0 20px;
+        margin-bottom: 80px;
+
+        .team-section-title {
+            font-size: 2em;
+            font-weight: 800;
+            color: $color-blue; // Usando tu color primario azul
+            margin-bottom: 60px;
+            text-align: left;
+            text-transform: uppercase;
+
+            @media (max-width: 992px) {
+                font-size: 1.8em;
+            }
+            @media (max-width: 768px) {
+                font-size: 1.5em;
+                margin-bottom: 40px;
+            }
+        }
+
+        // Grid para la Dirección (2 columnas)
+        .team-grid__two-columns {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 630px; // Limita el ancho para que las 2 tarjetas no se separen demasiado
+            margin: 0 0 60px 0; // Centra el grid de 2 columnas y le da margen inferior
+
+            @media (max-width: $bp-medium) {
+                grid-template-columns: 1fr;
+                max-width: 400px; // Ajustar para móvil
+            }
+        }
+
+        // Grid para Investigadores (4 columnas)
+        .team-grid__multi-column {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); // 4 COLUMNAS
+            gap: 70px 30px;
+            margin: 0 0 120px 0;
+
+            @media (max-width: $bp-large) { // Tablets
+                grid-template-columns: repeat(3, 1fr);
+            }
+            @media (max-width: $bp-medium) { // Móviles
+                grid-template-columns: repeat(2, 1fr);
+            }
+            @media (max-width: 480px) { // Móviles muy pequeños
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    .team-card {
+        background: none;
+        border: none;
+        padding: 0;
+        text-align: left;
+        cursor: pointer;
+        width: 100%;
+    
+        &__image-wrapper {
+            position: relative; // This is crucial for stacking the images
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 10px auto 30px auto;
+    
+            @media (max-width: 768px) { // Using a pixel value for clarity
+                width: 150px;
+                height: 150px;
+            }
+        }
+    
+        &__image {
+            // Both images are stacked using absolute positioning
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease-in-out; // Smooth transition
+    
+            &--hover {
+                // The hover image is on top, but fully transparent by default
+                opacity: 0;
+            }
+        }
+    
+        // This is the hover logic
+        &:hover {
+            .team-card__image--hover {
+                // On hover, the top image becomes opaque
+                opacity: 1;
+            }
+    
+            .team-card__image:not(.team-card__image--hover) {
+                // The bottom (normal) image becomes transparent
+                opacity: 0;
+            }
+        }
+    
+        &__name {
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 4px;
+            text-align: center;
+
+            @media (max-width: 992px) {
+                font-size: 1.3em;
+            }
+            @media (max-width: 768px) {
+                font-size: 1.2em;
+            }
+        }
+    
+        &__role {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: $color-blue; // Example secondary text color
+            margin: 0;
+            text-align: center;
+
+            @media (max-width: 992px) {
+                font-size: 1.1em;
+            }
+            @media (max-width: 768px) {
+                font-size: 1em;
+            }
+
+        }
+
+        &__detalle {
+            font-size: 1em;
+            font-weight: 400;
+            color: #000000; // Example secondary text color
+            margin: 0;
+            text-align: center;
+        }
+    }
+}
+
+// Estilos para el modal lateral (IMITANDO AL .menu-panel)
+.team-modal {
+    position: fixed;
+    top: 0;
+    left: 0; // Inicia cubriendo todo pero invisible para capturar clicks del overlay
+    width: 100%;
+    height: 100%;
+    z-index: 1002;
+    pointer-events: none; // No se puede interactuar por defecto
+    
+    &__overlay {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.4);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    &__content {
+        position: absolute;
+        top: 0;
+        right: -100%; // INICIA FUERA DE PANTALLA A LA DERECHA
+        width: 500px; // Ancho del modal, igual que el menú
+        max-width: 90vw;
+        height: 100%;
+        background-color: $bg-menu-panel;
+        color: $color-text-menu;
+        box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+        padding: 40px;
+        padding-top: 80px;
+        overflow-y: auto;
+        transition: right 0.4s $transition-easing-menu; // Transición de 'right'
+    }
+
+    &.open {
+        pointer-events: auto;
+
+        .team-modal__overlay {
+            opacity: 1;
+        }
+        .team-modal__content {
+            right: 0; // SE MUEVE PARA MOSTRARSE
+        }
+    }
+
+    &__close-btn {
+        position: absolute;
+        top: 25px;
+        right: 25px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    &__bio {
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 5px;
+        }
+        h4 {
+            font-size: 1.3em;
+            color: $color-text-menu-subtle;
+            margin-bottom: 30px;
+        }
+
+        p {
+            font-size: 1.1em;
+            //font-weight: 500;
+            text-align: justify;
+            line-height: 1.5;
+            margin-bottom: 20px;
+
+            color: $color-text-menu;
+        }
+
+        p.experiencia {
+            font-size: 1.1em;
+            font-style: italic;
+            color: #ffffff;
+            font-weight: 500;
+            text-align: left;
+            margin-bottom: 30px;
+          }
+
+          p.email{
+            font-size: 1.1em;
+            text-decoration: underline;
+            color: $color-blue;
+            font-weight: 700;
+            text-align: left;
+            margin-top: 30px;
+            margin-bottom: 30px;
+          }
+        strong {
+            color: $color-text-menu-subtle;
+        }
+    }
+}
+
+.main-footer.page-footer { // Si necesitas espaciado específico para el footer en esta página
+    //padding-top: 60px;
+    margin-top: 0;
+    margin-right: 70px;
+}

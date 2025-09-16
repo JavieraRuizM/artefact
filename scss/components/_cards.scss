@@ -1,0 +1,273 @@
+// scss/components/_cards.scss
+
+.card { // Estilo base común para todas las tarjetas
+    background-color: $bg-body; // Fondo blanco por defecto
+    padding: 0; // Sin padding directo en la tarjeta, se maneja en el contenido interno
+    border-radius: 0;
+    box-shadow: none; // Sin sombras por defecto
+    text-align: left;
+}
+
+.component-card { // Tarjetas principales "Artefactos" y "Relaciones"
+    @extend .card; // Hereda estilos de .card
+    flex-basis: calc(50% - 20px); // Ocupa casi la mitad del espacio, considerando el gap
+    display: flex;
+    flex-direction: column; // Contenido interno se apila verticalmente
+
+    @media (max-width: $bp-medium) {
+        background-color: transparent;
+    }
+
+
+    h2 {
+        font-size: 2em; // Tu tamaño
+        //text-decoration: underline; // Tu decoración
+        font-weight: 700;
+        color: $color-text-primary;
+        margin-top: 0;
+        margin-bottom: 10px; // Tu margen
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        letter-spacing: 1px; // Tu espaciado
+
+        @media (max-width: $bp-medium) {
+            font-size: 1.6em; // Ocupa todo el ancho disponible
+            letter-spacing: 0;
+        }
+
+        
+    }
+
+    .title-icon { // Iconos dentro de los títulos h2 de estas tarjetas
+        width: 24px; // Tu tamaño
+        height: auto; // Tu ajuste
+        margin-right: 8px;
+        filter: invert(1); // Tu filtro
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: 400;
+        margin-bottom: 20px;
+        flex-grow: 1;
+        color: $color-text-light;
+    }
+    // El hover que activa el GIF fullscreen se maneja por JS.
+    // El contenedor del GIF (.fullscreen-gif-background) se estiliza más abajo.
+
+        // Media query para cuando se apilan y para ajustar contenido interno
+        @media (max-width: $bp-medium) { // ej. <= 768px
+            flex-basis: auto; // Ocupan todo el ancho cuando están en columna
+            margin-bottom: 30px; // Espacio entre tarjetas apiladas
+    
+            &:last-child {
+                margin-bottom: 0;
+            }
+    
+            .card-content-wrapper {
+                padding: 20px; // Ajustar padding interno en móvil
+            }
+    
+            h2 {
+                font-size: 1.4em; // Reducir tamaño de título en móvil
+                // letter-spacing: 0.5px;
+                font-weight: 500;
+            }
+    
+            .title-icon {
+                width: 20px; // Ajustar tamaño del icono si es necesario
+            }
+    
+            p {
+                font-size: 1em; // Reducir tamaño de párrafo en móvil
+                // margin-bottom: 15px;
+            }
+    
+            .btn-visual, // O la clase de tu botón visual
+            .btn {
+                font-size: 1em; // Botón un poco más pequeño
+                padding: 10px 15px;
+            }
+        }
+    
+         @media (max-width: 480px) { // Pantallas muy pequeñas
+            .card-content-wrapper {
+                padding: 15px;
+                //margin: AUTO;
+            }
+            h2 {
+                font-size: 1.4em;
+            }
+            p {
+                font-size: 1em;
+                line-height: 140%;
+            }
+            .btn-visual, // O la clase de tu botón visual
+            .btn {
+                font-size: 1em; // Botón un poco más pequeño
+                padding: 10px 15px;
+            }
+         }
+}
+
+// Tarjetas de la sección "Exploración"
+.exploration-card {
+    @extend .card;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+
+
+    .exploration-card-image-wrapper { // Contenedor para la imagen con overflow:hidden
+        width: 100%;
+        height: 270px; // Tu altura preferida para el área de la imagen
+        overflow: hidden; // CRUCIAL: oculta las partes de la imagen que se salen al escalar/mover
+        margin-bottom: 15px; // Espacio entre la imagen y el título
+        position: relative; // Útil para futuras superposiciones si las necesitas
+
+        .exploration-image { // Estilos para la imagen <img>
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; // Asegura que la imagen cubra el contenedor manteniendo su aspect ratio
+            object-position: center center; // Posición inicial de la imagen (centrada)
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                        object-position 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94); // Transición suave
+            transform: scale(1); // Estado inicial: sin zoom
+        }
+    }
+
+    // EFECTO DE PANEO AL HACER HOVER EN LA TARJETA
+    // Se activa cuando se hace hover sobre toda la .exploration-card
+    &:hover {
+        .exploration-image {
+            transform: scale(1.15); // Aumenta la escala de la imagen (ej. 115%)
+                                    // Esto hace que la imagen sea más grande que su contenedor
+                                    // y object-position la mueve para crear el paneo.
+            object-position: 40% 40%; // Ejemplo: panea hacia arriba y a la izquierda
+                                      // (revelando más de la parte inferior/derecha de la imagen escalada).
+                                      // Experimenta con estos valores (ej. "top left", "bottom right", "20% 80%").
+        }
+    }
+    // Opcional: Si prefieres que el paneo solo se active al hacer hover directamente en el área de la imagen:
+    /*
+    .exploration-card-image-wrapper:hover {
+        .exploration-image {
+            transform: scale(1.15);
+            object-position: 40% 40%;
+        }
+    }
+    */
+
+    h3 {
+        font-size: 1.5em; // Tu tamaño
+        font-weight: 700;
+        color: $color-text-primary;
+        margin-top: 15px; // Cambiado de 20 a 0, ya que el wrapper de la imagen tiene margin-bottom
+        margin-bottom: 5px;
+        line-height: 1.3em;
+
+        @media (max-width: $bp-medium) {
+            font-size: 1em; // Tu tamaño
+            font-weight: 500;
+            color: $color-text-primary;
+            margin-top: 10px; // Cambiado de 20 a 0, ya que el wrapper de la imagen tiene margin-bottom
+            margin-bottom: 5px;
+            line-height: 1.4em;
+
+        }
+    }
+
+    p {
+        font-size: 1em;
+        font-weight: 400;
+        color: $color-text-light;
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 480px) { // Pantallas muy pequeñas
+        margin-bottom: 40px;
+        .card-content-wrapper {
+            padding: 15px;
+            //margin: AUTO;
+        }
+        h2 {
+            font-size: 1.4em;
+        }
+        p {
+            font-size: 1em;
+            line-height: 140%;
+        }
+        .btn-visual, // O la clase de tu botón visual
+        .btn {
+            font-size: 1em; // Botón un poco más pequeño
+            padding: 10px 15px;
+        }
+     }
+}
+
+// Opcional: Si quieres diferentes direcciones de paneo por tarjeta,
+// puedes añadir clases modificadoras a .exploration-card en el HTML
+// y luego estilos específicos aquí:
+/*
+.exploration-card.pan-direction-top-left:hover .exploration-image {
+    transform: scale(1.15);
+    object-position: top left;
+}
+.exploration-card.pan-direction-bottom-right:hover .exploration-image {
+    transform: scale(1.15);
+    object-position: bottom right;
+}
+*/
+
+// Opcional: Keyframes para un paneo más animado y continuo (ejemplo)
+// Si usas esto, quita el transform y object-position del &:hover .exploration-image de arriba
+// y aplica la animación: animation: imagePan 10s ease-in-out infinite alternate;
+/*
+@keyframes imagePan {
+    0% { transform: scale(1.1) translateX(-5%) translateY(-5%); }
+    25% { transform: scale(1.15) translateX(5%) translateY(-5%); }
+    50% { transform: scale(1.1) translateX(5%) translateY(5%); }
+    75% { transform: scale(1.15) translateX(-5%) translateY(5%); }
+    100% { transform: scale(1.1) translateX(-5%) translateY(-5%); }
+}
+// Nota: Animar transform (translateX, translateY, scale) es generalmente más performante
+// que animar object-position directamente en keyframes. El ejemplo de keyframes de arriba usa transform.
+*/
+
+// --- Estilo para el fondo GIF de pantalla completa (activado por hover en .component-card) ---
+.fullscreen-gif-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    // background-color: $bg-fullscreen-gif-overlay; // Define esta variable si quieres un overlay de color
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1003; // Asegúrate que sea lo suficientemente alto
+    display: none;
+    opacity: 0;
+    transition: opacity $transition-speed-normal $transition-easing-default; // Asegúrate que estas variables estén definidas
+    pointer-events: none;
+
+    &.active {
+        display: block;
+        opacity: 1;
+    }
+
+
+// IMPORTANTE: media query para que el gif sea visible todo el tiempo en movil.
+
+    @media (max-width: $bp-medium) {
+        display: block; // Siempre visible en móvil
+        opacity: .7;     // Siempre opaco en móvil
+        z-index: -1;    // Detrás de todo el contenido de la página
+        // Asegúrate de que el body o el .container principal no tengan un background que lo tape.
+        // background-image: url('../assets/tu-gif-de-fondo-movil.gif'); // GIF específico para fondo móvil
+                                                                     // O puedes usar el mismo que para artefactos-card
+        background-image: url('../assets/ARTEFACT.gif'); // Ejemplo usando el mismo GIF
+    }
+}

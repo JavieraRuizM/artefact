@@ -1,0 +1,236 @@
+// scss/pages/_detalle-artefacto.scss
+
+// Botón Volver
+.btn-volver {
+    position: fixed;
+    top: 38px; // Ajusta para alinear con el .menu-toggle
+    left: 40px; // Posición del botón "volver"
+    z-index: 1001; // Similar al .menu-toggle pero podría estar debajo si el menú se superpone
+    font-family: $font-primary;
+    font-size: 1.3em;
+    color: $color-text-primary; // O $color-blue
+    text-decoration: none;
+    padding: 8px 12px;
+    background-color: transparent;
+    // border: 1px solid $color-text-primary; // Opcional: si quieres un borde
+    // border-radius: 4px; // Opcional
+    transition: color 0.3s ease, background-color 0.3s ease;
+
+    .arrow-left {
+        margin-right: 6px;
+        font-weight: bold;
+    }
+
+    &:hover {
+        color: $color-blue;
+        // background-color: lighten($color-blue, 40%); // Opcional
+    }
+
+    @media (max-width: $bp-medium) {
+        top: 28px;
+        left: 20px;
+        font-size: 0.9em;
+        padding: 6px 10px;
+    }
+}
+
+// Contenedor principal de la página de detalle
+.detalle-artefacto-container {
+    padding-top: 120px; // Espacio para el botón de volver y menú hamburguesa fijos
+    padding-left: 200px;
+    padding-right: 200px;
+    padding-bottom: 80px; // Espacio antes del footer
+    box-sizing: border-box;
+
+    @media (max-width: 1200px) { // Reducir padding en pantallas más pequeñas
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @media (max-width: $bp-large) { // ej. 992px
+        padding-left: 60px;
+        padding-right: 60px;
+        padding-top: 100px;
+    }
+    @media (max-width: $bp-medium) { // ej. 768px
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 80px;
+    }
+}
+
+// Sección Hero del Artefacto (Imagen Principal + Info)
+.artefacto-hero-section {
+    display: flex;
+    align-items: center; // Centra verticalmente la imagen y el texto si tienen alturas diferentes
+    gap: 40px; // Espacio entre la imagen y el bloque de texto
+    margin-bottom: 70px;
+
+    .artefacto-hero__image-wrapper {
+        flex: 0 0 45%; // La imagen ocupa el 45% del espacio disponible, no crece, no se encoge
+        // max-width: 400px; // O un max-width fijo si prefieres
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            // max-height: 500px; // Opcional: limitar altura máxima de la imagen principal
+            object-fit: contain; // Para asegurar que toda la imagen sea visible
+        }
+    }
+
+    .artefacto-hero__info {
+        flex: 1; // El texto toma el espacio restante
+
+        h1 {
+            font-family: $font-primary;
+            font-size: 2.8em; // Tamaño grande para el título del artefacto
+            font-weight: 700;
+            color: $color-text-primary;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+        h2 {
+            font-family: $font-primary;
+            font-size: 1,8em; 
+            font-weight: 600;
+            color: $color-text-primary;
+            margin-bottom: 0.5em;
+            line-height: 1.2;
+        }
+
+        p {
+            font-family: $font-primary;
+            font-size: 1.1em; // Tamaño para la descripción
+            line-height: 1.7;
+            color: $color-black; // O $color-text-primary
+            text-align: justify;
+        }
+    }
+
+    @media (max-width: $bp-large) { // En pantallas más pequeñas, apilarlos
+        flex-direction: column;
+        align-items: flex-start; // O center si prefieres centrar la imagen y el texto cuando están apilados
+        gap: 30px;
+
+        .artefacto-hero__image-wrapper {
+            flex-basis: auto; // Permitir que el ancho se ajuste
+            width: 100%; // Ocupar todo el ancho disponible
+            max-width: 450px; // Limitar el ancho de la imagen en modo apilado
+            margin: 0 auto; // Centrar la imagen si es más estrecha
+        }
+        .artefacto-hero__info {
+            text-align: left; // O center si el diseño lo requiere
+        }
+    }
+}
+
+
+// Estilos para las Secciones de Galería
+.artefacto-gallery {
+    margin-bottom: 100px; // Tu margen
+
+    h2 { // Título de la galería (ej. "Proceso constructivo")
+        font-family: $font-primary;
+        font-size: 1.8em;
+        font-weight: 600;
+        color: $color-blue;
+        margin-bottom: 25px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .gallery-scroll-container {
+        display: flex;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 10px 0 0px 0; // Tu padding (padding-bottom es 0, la barra de scroll podría necesitar más espacio si se hace visible)
+                                // Considera un padding-bottom de al menos la altura de la barra de scroll si el track se hace visible
+                                // Ejemplo: padding: 10px 0 10px 0; si la barra es de 8px + un poco de margen
+        gap: 5px; // Tu espacio entre imágenes
+
+        // --- ESTILOS PARA LA BARRA DE SCROLL ---
+        // Para Firefox: hacerla delgada y de colores sutiles por defecto
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent; // thumb y track transparentes inicialmente
+
+        // WebKit: barra de scroll transparente por defecto
+        &::-webkit-scrollbar {
+            height: 8px; // Altura de la barra
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent; // Fondo del track transparente inicialmente
+            border-radius: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: rgba(0, 0, 0, 0); // Thumb inicialmente transparente
+            border-radius: 10px;
+            // transition: background-color 0.2s ease-in-out; // Opcional para el color del thumb
+        }
+
+        // AL HACER HOVER SOBRE EL CONTENEDOR DE LA GALERÍA, MOSTRAMOS LA BARRA DE SCROLL
+        &:hover {
+            // Firefox: mostrar colores
+            scrollbar-color: #ccc #f1f1f1; // thumb y track visibles
+
+            // WebKit: mostrar colores
+            &::-webkit-scrollbar-track {
+                 background: #f1f1f1; // Color visible para el track
+            }
+            &::-webkit-scrollbar-thumb {
+                background: #ccc; // Color visible para el thumb
+            }
+            &::-webkit-scrollbar-thumb:hover { // Cuando el mouse está sobre el thumb mismo
+                background: #b3b3b3; // Un gris un poco más oscuro
+            }
+        }
+    }
+
+    .gallery-item {
+        flex: 0 0 auto;
+        text-align: left;
+
+        img {
+            display: block;
+            height: 500px;  // Tu altura fija
+            width: auto;
+            max-width: none;
+            object-fit: cover;
+            //border: 1px solid #eee; // Tu borde comentado
+            margin-bottom: 8px;
+        }
+
+        .gallery-image-caption {
+            font-family: $font-primary;
+            font-size: 0.85em;
+            color: $color-text-light;
+            line-height: 1.4;
+            max-width: 250px;
+        }
+    }
+}
+
+// Ajustes para el footer en esta página específica si es necesario
+.artefact-detail-footer {
+    // El footer se centrará dentro del .detalle-artefacto-container si este tiene margin auto
+    // o se posicionará relativo al viewport si es position:fixed.
+    // Si el .detalle-artefacto-container tiene padding: 0 200px, el footer también necesita este padding
+    // o estar DENTRO de ese contenedor para alinearse.
+    // Si el footer es global y fuera de .detalle-artefacto-container, necesitamos asegurar su alineación.
+    // Asumiendo que el footer es global y fuera:
+    padding-left: 200px;
+    padding-right: 200px;
+    box-sizing: border-box; // Para que el padding no aumente el ancho total
+
+    @media (max-width: 1200px) {
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    @media (max-width: $bp-large) {
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+    @media (max-width: $bp-medium) {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}

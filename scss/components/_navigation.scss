@@ -1,0 +1,267 @@
+// scss/components/_navigation.scss
+
+// --- Estilos del Botón de Menú Hamburguesa con SVGs separados ---
+.menu-toggle {
+    position: absolute;
+    top: 45px;
+    right: 40px;
+    z-index: 1002;
+    background: transparent; // Fondo transparente para que no oculte los SVGs
+    border: none;
+    padding: 8px; // Padding para el área de clic alrededor del SVG
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // El tamaño del botón se adaptará al SVG visible + padding
+    transition: opacity $transition-speed-normal $transition-easing-default;
+
+    @media (max-width: $bp-medium) {
+        top: 20px;
+        right: 20px;
+        padding: 6px;
+    }
+
+    &:hover {
+        opacity: 0.7;
+    }
+
+    .menu-icon-svg { // Estilos comunes para ambos SVGs
+        display: block; // Importante para la correcta aplicación de width/height
+        height: auto;   // Mantener aspect ratio por defecto
+    }
+
+    .menu-icon-hamburger {
+        width: 70px;    // Ancho específico para el ícono de hamburguesa
+        display: block; // Visible por defecto
+
+        @media (max-width: 580px) {
+            width: 40px;
+    }
+    }
+    .menu-icon-close {
+        width: 45px;    // Ancho específico para el ícono de cerrar
+        display: none;  // Oculto por defecto
+        // El color se maneja en body.menu-open .menu-icon-close si es necesario
+        @media (max-width: 580px) {
+            width: 40px;
+    }
+    }
+
+    // Cuando el menú está activo, se muestra el icono de cerrar y se oculta el de hamburguesa
+    &.active {
+        .menu-icon-hamburger {
+            display: none;
+        }
+        .menu-icon-close {
+            display: block;
+        }
+    }
+}
+
+// --- Estilos del Panel del Menú Lateral ---
+.menu-panel {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 40vw;   // 1/3 del ancho del viewport
+    min-width: 280px;    // Ancho mínimo para móviles
+    max-width: 500px;    // Ancho máximo para pantallas muy grandes (ajusta o quita)
+    height: 100%;
+    background-color: $bg-menu-panel;
+    color: $color-text-menu;
+    // Padding superior e inferior del panel general, el lateral se aplica a los items 'a'
+    padding: 40px 0 20px 0;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.3);
+    z-index: 1001;
+    transition: right $transition-speed-menu $transition-easing-menu;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+
+    &.active {
+        right: 0;
+    }
+
+    ul { // Contenedor de la lista de ítems del menú
+        list-style: none;
+        padding: 0; // No padding en el UL directamente para controlar el espaciado en los <li> o <a>
+        margin: 0;
+        flex-grow: 1;
+    }
+
+    li {
+        & > a { // Estilo para los enlaces directos dentro de los <li>
+            display: flex;
+            align-items: center;
+            // Padding base para cada ítem (vertical 10px, horizontal 20px para compensar el no-padding del panel)
+            padding: 10px 30px;
+            color: $color-white;
+            text-decoration: none;
+            font-family: $font-primary;
+            transition: color $transition-speed-fast $transition-easing-default;
+
+            &:hover {
+                color: $color-blue;
+                text-decoration: underline;
+            }
+        }
+
+        // Espacio extra para el PRIMER item de la lista
+        &:first-child > a {
+            // Aumenta el padding superior del primer item (adicional al base de 10px)
+            // Esto crea más espacio entre el borde superior del panel (que tiene su propio padding-top de 40px)
+            // y el primer texto del menú.
+            padding-top: (10px + 15px); // Total 25px arriba para el primer 'a'
+        }
+
+        // Separador y espaciado para items con .menu-group-end
+        &.menu-group-end {
+            & > a { // El 'a' dentro del li que marca el fin del grupo
+                border-bottom: 1px solid $border-color-menu;
+                // Añadir más padding-bottom aquí para más espacio ANTES de la línea del separador
+                // El padding base es 10px, le sumamos 10px más para un total de 20px.
+                padding-bottom: (10px + 10px);
+            }
+            // El siguiente elemento <li> después de un .menu-group-end
+            & + li:not(.menu-footer-link) > a { // Asegurarse que no es el footer link
+                // Añadir más padding-top aquí para más espacio DESPUÉS de la línea del separador
+                // El padding base es 10px, le sumamos 10px más para un total de 20px.
+                padding-top: (10px + 10px);
+            }
+        }
+    }
+
+    .menu-icon { // Iconos DENTRO de los items del menú (ej. al lado de ARTEFACTOS)
+        width: 30px;
+        height: auto;
+        margin-right: 22px;
+        //filter: invert(1); // Asume iconos SVG negros que se quieren blancos
+
+    }
+
+    // Estilos específicos para los niveles del menú
+    .menu-level-1 {
+        & > a {
+            font-size: 2em;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: underline;
+            letter-spacing: 0.5px;
+            // El padding vertical específico se maneja por las reglas de padding en li > a, :first-child, y .menu-group-end
+        }
+    }
+
+    .menu-level-2 {
+        & > a {
+            font-size: 1.5em;
+            font-weight: 500;
+            // padding-left ya está en li > a (20px)
+            color: $color-white;
+        }
+    }
+
+    .menu-level-3 { // Si decides añadir Nivel 3 después
+        & > a {
+            font-size: 1em;
+            font-weight: 400;
+            // padding-left ya está en li > a (20px)
+            color: $color-text-menu-very-subtle;
+        }
+    }
+
+    .menu-footer-link {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        // Padding: top, horizontal, bottom. El horizontal alinea con los items.
+        padding: 25px 20px 10px 20px;
+        color: $color-text-menu-footer;
+        text-decoration: none;
+        font-size: 1em;
+        font-weight: 400;
+        margin-top: auto; // Empuja al final del panel flex
+        border-top: 1px solid $border-color-menu; // Separador antes del footer
+
+        &:hover {
+            color: $color-white;
+            text-decoration: none;
+        }
+
+        .menu-icon-footer {
+            width: 18px;
+            height: 18px;
+            margin-right: 10px;
+            filter: invert(70%) sepia(0%) saturate(100%) hue-rotate(0deg) brightness(100%) contrast(80%);
+        }
+    }
+
+    @media (max-width: $bp-medium) { // ej. <= 768px (o el valor de tu $bp-medium)
+        width: 100vw; // El menú ocupa TODO el ANCHO del viewport
+        max-width: 100vw; // Anula cualquier max-width anterior para asegurar pantalla completa
+        min-width: 100vw; // Anula cualquier min-width anterior
+        right: -100vw;    // Asegura que inicie completamente fuera de la pantalla (considerando el nuevo ancho)
+        padding: 20px;     // Ajusta el padding interno para el modo de pantalla completa
+        padding-top: 60px; // Más padding superior para dejar espacio si el botón X está dentro (ajusta si es necesario)
+
+        // Si el .menu-toggle (botón X) necesita reposicionarse cuando el menú es pantalla completa,
+        // los estilos para eso irían en la regla 'body.menu-open .menu-toggle' DENTRO de una media query similar.
+
+        // &.active { // La regla .active { right: 0; } que ya tienes arriba sigue funcionando.
+        //     right: 0;
+        // }
+
+        // Opcional: Ajustar padding de los items del menú si es necesario para pantalla completa
+        // ul {
+        //     padding-top: 20px; // Ejemplo
+        // }
+        // li > a {
+        //     padding: 15px 20px; // Ejemplo: más padding vertical para items
+        // }
+    }
+}
+
+// --- Estilo para el fondo GIF cuando el menú está activo ---
+.menu-active-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: $color-white; // Fallback
+    // background-image: url('tu-gif-menu-activado.gif'); // El JS establece el GIF
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1000; // Detrás del panel del menú
+    display: none; // Inicialmente oculto
+    opacity: 0;
+    transition: opacity $transition-speed-normal $transition-easing-default;
+
+    &.active {
+        display: block;
+        opacity: 1;
+    }
+}
+
+// --- Ajustes globales cuando el menú está abierto (clase .menu-open en body) ---
+body.menu-open {
+    .menu-toggle {
+        background: transparent; // Botón transparente sobre el GIF del menú
+
+       // .menu-icon-hamburger {
+            // Este está oculto por JS (display: none;)
+        //}
+        .menu-icon-close { // Este es el que está visible (display: block;)
+            // Si assets/cerrar.svg es NEGRO y quieres que sea BLANCO para contrastar con el fondo del menú:
+            filter: brightness(0) invert(1);
+            // Si tu cerrar.svg ya es blanco o está diseñado para serlo en este contexto,
+            // puedes comentar o eliminar la línea de filter.
+        }
+    }
+    // Opcional: ocultar o aplicar efectos al contenido principal de la página
+    // #mainContent {
+    //    filter: blur(4px);
+    //    pointer-events: none; // Para que no se pueda interactuar con el fondo
+    // }
+}

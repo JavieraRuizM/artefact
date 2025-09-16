@@ -1,0 +1,38 @@
+// scss/abstracts/_variables.scss
+
+// Tipografía
+$font-primary: 'DM Sans', sans-serif;
+
+// Colores Primarios
+$color-black: #141413;
+$color-white: #FEFEFE;
+$color-blue: #0057FF; // Azul usado en subtítulos y hovers
+
+// Colores Secundarios y de Texto
+$color-text-primary: $color-black;
+$color-text-light: #333; // Para párrafos de tarjetas, etc.
+$color-text-menu: $color-white;
+$color-text-menu-subtle: #ccc;
+$color-text-menu-very-subtle: #aaa;
+$color-text-menu-footer: #a0a0a0;
+
+// Colores de Fondo
+$bg-body: $color-white;
+$bg-menu-panel: #121212; // Fondo del panel de menú
+$bg-menu-active: $color-black; // Fallback para GIF del menú activo
+$bg-card-placeholder: #e0e0e0; // Para las imágenes de las tarjetas de exploración
+// $bg-fullscreen-gif-overlay: rgba(0,0,0,0.7); // Opcional, si quieres un overlay de color para el GIF fullscreen
+
+// Bordes
+$border-color-menu: #383838; // Separadores en el menú
+
+// Transiciones
+$transition-speed-fast: 0.2s;
+$transition-speed-normal: 0.3s;
+$transition-speed-menu: 0.4s;
+$transition-easing-default: ease;
+$transition-easing-menu: cubic-bezier(0.25, 0.46, 0.45, 0.94); // Para la animación del menú
+
+// Breakpoints (Puntos de quiebre para responsividad)
+$bp-large: 992px;  // Escritorios pequeños, tablets grandes
+$bp-medium: 768px; // Tablets, móviles grandes

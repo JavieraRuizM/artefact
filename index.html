@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefactos Relacionales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <img src="/assets/hamburguesa.svg" alt="Ícono menú" class="menu-icon-svg menu-icon-hamburger" />
+        <img src="/assets/cerrar.svg" alt="Ícono cerrar menú" class="menu-icon-svg menu-icon-close"
+            style="display: none;" />
+    </button>
+
+    <nav class="menu-panel" id="menuPanel">
+        <ul>
+            <li class="menu-level-1">
+                <a href="index.html">
+                    <img src="assets/home.svg" alt="" class="menu-icon"> HOME
+                </a>
+            </li>
+            <li class="menu-level-1">
+                <a href="artefactos.html">
+                    <img src="assets/artefactos-icon.svg" alt="" class="menu-icon"> ARTEFACTOS
+                </a>
+            </li>
+            <li class="menu-level-1"> <a href="relaciones.html">
+                    <img src="assets/relaciones-icon.svg" alt="" class="menu-icon"> RELACIONES
+                </a>
+            </li>
+
+            <li class="menu-level-1 menu-group-end"> <a href="proyecto.html">
+                <img src="assets/red2.svg" alt="" class="menu-icon"> SOBRE LA PLATAFORMA
+            </a>
+        </li>
+            <li class="menu-level-2"><a href="plataforma.html">proyectos</a></li>
+            <li class="menu-level-2"><a href="equipo.html">equipo</a></li>
+            <li class="menu-level-2"><a href="workshops.html">workshops y seminarios</a></li>
+            <li class="menu-level-2"> <a href="publicaciones.html">publicaciones</a>
+            <li class="menu-level-2"><a href="exhibiciones.html">exhibiciones</a></li>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/artefactos_relacionales/" target="_blank" class="menu-footer-link">
+            <img src="assets/ig-icon.svg" alt="Instagram" class="menu-icon-footer">
+            artefactosrelacionales
+        </a>
+    </nav>
+
+    <div class="menu-active-background" id="menuActiveBackground"> <img src="assets/ARTEFACT.gif"> </div>
+
+    <div class="fullscreen-gif-background" id="fullscreenGifBackground"></div>
+
+    <div class="container" id="mainContent">
+        <header class="main-header">
+            <h1>ARTEFACTOS <br> RELACIONALES</h1>
+            <p class="subtitle">Plataforma de exploración y creación en torno a transformaciones socioecologicas
+                extractivas</p>
+        </header>
+
+        <section class="components-section">
+            <div class="card component-card" id="artefactos-card" data-gif-src="assets/ARTEFACT.gif">
+                <h2><img src="assets/artefactos-icon.svg" alt="" class="title-icon"> ARTEFACTOS</h2>
+                <p>Dispositivos diseñados colectivamente como mediaciones sensibles entre actores humanos, comunidades,
+                    territorios y tecnologías. Los artefactos no solo
+                    representan realidades, sino que las co-producen, activando formas
+                    colaborativas de imaginar alternativas al modelo extractivista.</p>
+                <a href="artefactos.html" class="btn">ver artefactos &rarr;</a>
+            </div>
+
+            <div class="card component-card" id="relaciones-card" data-gif-src="tu-gif-relaciones-fullscreen.gif">
+                <h2><img src="assets/relaciones-icon.svg" alt="" class="title-icon"> RELACIONES</h2>
+                <p>Visualización espacial que representa las redes de vida implicadas en los procesos de urbanización
+                    extractiva. En esta se destaca el rol fundamental que cumplen diferentes actores en los complejos
+                    entramados socioecológicos que configuran el
+                    extractivismo minero.</p>
+                <a href="#ver-relaciones" class="btn">ver relaciones &rarr;</a>
+            </div>
+        </section>
+
+
+        <section class="exploration-section" id="exploracion">
+            <h2>EXPLORACIÓN</h2>
+            <div class="exploration-grid">
+                <div class="card exploration-card" id="publicaciones_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="publicaciones.html">
+                            <img src="assets/workshop1.png" alt="Publicaciones sobre urbanización extractiva"
+                                class="exploration-image">
+                        </a>
+                    </div>
+                    <a href="publicaciones.html">
+                        <h3>Publicaciones</h3>
+                    </a>
+                </div>
+
+                <div class="card exploration-card" id="seminarios_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="exhibiciones.html">
+                            <img src="assets/exhibiciones/ZOOM.png" alt="Seminarios relacionados con el proyecto"
+                                class="exploration-image">
+                        </a>
+                    </div>
+                    <a href="exhibiciones.html">
+                        <h3>Exhibiciones</h3>
+                    </a>
+
+                </div>
+
+                <div class="card exploration-card" id="workshop_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="workshops.html">
+                            <img src="assets/workshop-seminarios/cmdr.png" alt="Workshops de diseño y arte"
+                                class="exploration-image">
+                        </a>
+                    </div>
+                    <a href="workshops.html">
+                        <h3>Workshops y Seminarios</h3>
+                    </a>
+                    <!-- <p>A través de enfoques interdisciplinarios que integran arte, diseño, ciencias sociales.</p>-->
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer class="main-footer">
+            <a href="#" id="scrollTopBtn" class="scroll-top-btn">&uarr;</a>
+        </footer>
+
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

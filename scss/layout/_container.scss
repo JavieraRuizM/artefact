@@ -1,0 +1,17 @@
+// scss/layout/_container.scss
+
+.container {
+    //max-width: 1200px; // Ancho máximo del contenido principal
+    margin: 10px 50px 0px 50px; // Centrar el contenedor
+    padding: 40px 20px; // Espaciado interno general
+   //padding-top: 50px; // Más padding superior para dejar espacio al botón de menú fijo
+
+    // Ajustes para pantallas más pequeñas
+    @media (max-width: $bp-large) {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+    @media (max-width: $bp-medium) {
+        padding-top: 80px; // Menos padding superior en móviles
+    }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefactos Relacionales</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+
+<body>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+        <img src="/assets/hamburguesa.svg" alt="Ícono menú" class="menu-icon-svg menu-icon-hamburger" />
+        <img src="/assets/cerrar.svg" alt="Ícono cerrar menú" class="menu-icon-svg menu-icon-close"
+            style="display: none;" />
+    </button>
+
+    <nav class="menu-panel" id="menuPanel">
+        <ul>
+            <li class="menu-level-1">
+                <a href="index.html">
+                    <img src="assets/home.svg" alt="" class="menu-icon"> HOME
+                </a>
+            </li>
+            <li class="menu-level-1">
+                <a href="artefactos.html">
+                    <img src="assets/artefactos-icon.svg" alt="" class="menu-icon"> ARTEFACTOS
+                </a>
+            </li>
+            <li class="menu-level-1"> <a href="relaciones.html">
+                    <img src="assets/relaciones-icon.svg" alt="" class="menu-icon"> RELACIONES
+                </a>
+            </li>
+
+            <li class="menu-level-1 menu-group-end"> <a href="proyecto.html">
+                    <img src="assets/red2.svg" alt="" class="menu-icon"> SOBRE LA PLATAFORMA
+                </a>
+            </li>
+            <li class="menu-level-2"><a href="plataforma.html">proyectos</a></li>
+            <li class="menu-level-2"><a href="equipo.html">equipo</a></li>
+            <li class="menu-level-2"><a href="workshops.html">workshops y seminarios</a></li>
+            <li class="menu-level-2"> <a href="publicaciones.html">publicaciones</a>
+            <li class="menu-level-2"><a href="exhibiciones.html">exhibiciones</a></li>
+            </li>
+        </ul>
+        <a href="https://www.instagram.com/artefactos_relacionales/" target="_blank" class="menu-footer-link">
+            <img src="assets/ig-icon.svg" alt="Instagram" class="menu-icon-footer">
+            artefactosrelacionales
+        </a>
+    </nav>
+
+    <div class="menu-active-background" id="menuActiveBackground"></div>
+
+    <div class="container" id="mainContent">
+
+        <header class="main-header">
+            <h1>PUBLICACIONES</h1>
+        </header>
+
+        <section class="exploration-section" id="exploracion">
+            <div class="exploration-grid">
+
+
+                <div class="card exploration-card" id="publicaciones_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="pages-publicaciones/bookletartefactos.html" class="artefacto-imagen-link">
+                            <img src="assets/workshop1.png" alt="Publicaciones sobre urbanización extractiva"
+                                class="exploration-image">
+                        </a>
+                    </div>
+                    <h3>Artefactos Relacionales Para el diseño especulativo en el Antropoceno</h3>
+                </div>
+
+
+                <div class="card exploration-card" id="publicaciones_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="pages-publicaciones/on-extractivism.html" class="artefacto-imagen-link">
+                            <img src="assets/workshop-prueba.png" alt="Publicaciones sobre urbanización extractiva"
+                                class="exploration-image">
+                        </a>
+                    </div>
+                    <h3>On Extractivism: Entanglements from the Global North and South</h3>
+                </div>
+
+                <div class="card exploration-card" id="publicaciones_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="pages-publicaciones/escuela-pluriversos.html" class="artefacto-imagen-link">
+                            <img src="assets/publicaciones/escuelapluriversos.png"
+                                alt="Publicaciones sobre urbanización extractiva" class="exploration-image">
+                        </a>
+                    </div>
+                    <h3>Escuela de Pluriversos Climáticos</h3>
+                </div>
+
+
+                <div class="card exploration-card" id="publicaciones_card_exploracion">
+                    <div class="exploration-card-image-wrapper">
+                        <a href="pages-publicaciones/crafting.html" class="artefacto-imagen-link">
+                            <img src="assets/publicaciones/crafty.png" alt="Publicaciones sobre urbanización extractiva"
+                                class="exploration-image">
+                        </a>
+                    </div>
+                    <h3>Crafting Methods in Design Research</h3>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+        <footer class="main-footer">
+            <a href="#" id="scrollTopBtn" class="scroll-top-btn">&uarr;</a>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
